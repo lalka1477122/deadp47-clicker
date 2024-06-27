@@ -1,0 +1,228 @@
+@charset "UTF-8";
+/* Сброс стилей для всех элементов */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+@font-face {
+  font-family: "TT Norms Pro";
+  src: local("TT Norms Pro Extra Black Italic"), local("TT-Norms-Pro-Extra-Black-Italic"), url("TTNormsPro-ExtraBlackItalic.woff2") format("woff2"), url("TTNormsPro-ExtraBlackItalic.woff") format("woff"), url("TTNormsPro-ExtraBlackItalic.ttf") format("truetype");
+  font-weight: 900;
+  font-style: italic;
+}
+::-webkit-scrollbar {
+  width: 15px;
+}
+
+h1 {
+  top: 0;
+  position: sticky;
+  text-align: center;
+  font-size: 40px;
+  border-radius: 10px;
+  font-family: monospace;
+  color: rgba(20, 17, 31, 0.8392156863);
+}
+
+.h1-events,
+.h1-upgrade-shop {
+  border-radius: 0px;
+  top: 0;
+  position: sticky;
+  height: 74px;
+  z-index: 100;
+  width: 100%;
+  background-color: #dfbeb9;
+}
+
+.h1-upgrade-shop {
+  background-color: #88c5e1;
+}
+
+/* Стили для основного контейнера */
+.container {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr 1fr;
+  height: 100vh;
+}
+
+/* Стили для секции событий и магазина */
+.cobitie,
+.store {
+  overflow-y: auto;
+  max-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr;
+  gap: 10px;
+  border: 5px solid #534543;
+  padding: 20px;
+  background-color: #dfbeb9;
+  padding-top: 0px;
+}
+
+#playButton {
+  box-shadow: 0px 10px 0px 10px #ffffff;
+  transition: 100ms;
+  border-radius: 100%;
+}
+
+#playButton:active {
+  box-shadow: 0px 5px 0px 5px #9c9c9c;
+}
+
+/* Контейнер для карточек событий */
+.cobitie__container__for__card {
+  padding: 20px;
+  display: grid;
+  grid-auto-rows: minmax(100px, auto);
+  gap: 20px;
+}
+
+#total-points {
+  margin-top: 35px;
+  color: #ffffff;
+}
+
+h2 {
+  color: #ffffff;
+}
+
+/* Стили для карточек */
+.card {
+  user-select: none;
+  height: 90px;
+  display: grid;
+  grid-template-columns: 1fr 2fr 0.5fr;
+  align-items: center;
+  border: 2px solid #0f0b1b;
+  border-radius: 10px;
+  background-color: rgb(252, 252, 252);
+  box-shadow: 0px 0px 5px 1px #0f0b1b;
+  transition: 100ms;
+}
+
+.card:hover {
+  box-shadow: 0px 0px 1px 2px #261d43;
+  background-color: white;
+  scale: 1.05;
+  cursor: pointer;
+}
+
+.card:active {
+  box-shadow: 0px 0px 0px 0px #261d43;
+  background-color: rgb(219, 219, 219);
+  scale: 0.99;
+}
+
+#clickable-image {
+  background-size: auto;
+  pointer-events: visibleFill;
+  border-radius: 100%;
+  height: 400px;
+  width: 400px;
+  transition: 100ms;
+}
+
+#clickable-image:hover {
+  width: 410px;
+  height: 410px;
+}
+
+#clickable-image:active {
+  width: 390px;
+  height: 390px;
+}
+
+/* Стили для изображения на карточке */
+.card-image {
+  display: grid;
+  place-items: center;
+  border-right: 2px solid #0f0b1b;
+  padding: 10px;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* Стили для содержимого карточки */
+.card-content {
+  padding: 10px;
+}
+
+/* Стили для названия карточки */
+.card-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+/* Стили для описания карточки */
+.card-description {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Стили для уровня карточки */
+.card-level {
+  display: grid;
+  place-items: center;
+  border-left: 2px solid black;
+  padding: 10px;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Стили для зоны кликов */
+.clickerZone {
+  display: grid;
+  grid-template-rows: auto auto auto 1fr auto;
+  place-items: center;
+  padding: 20px;
+  background-color: #2d3357;
+}
+
+/* Стили для магазина */
+.store {
+  border: 5px solid #183543;
+  background-color: rgba(202, 238, 255, 0.3843137255);
+}
+
+.playButtonDisplay {
+  opacity: 0; /* Начальная прозрачность */
+  transition: opacity 1s ease; /* Плавная анимация для opacity */
+}
+
+.message {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* Добавьте этот класс в ваш CSS */
+.disabled {
+  background-color: #333;
+  color: #666;
+  pointer-events: none;
+}/*# sourceMappingURL=style.css.map */
+@keyframes purchase {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+.card {
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.purchased {
+  animation: purchase 0.5s ease;
+}
+
+.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Кликер Игра</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="shortcut icon" href="img/unnamed.jpg" type="image/x-icon" />
+</head>
+<body>
+    <!-- главный контейнер -->
+    <div class="container">
+        <!-- события -->
+        <div class="cobitie">
+            <h1 class="h1-events">events🎊</h1>
+            <!-- контейнер событий -->
+            <div class="cobitie__container__for__card" id="events">
+                <!-- Карточки событий будут добавлены динамически -->
+            </div>
+        </div>
+
+        <!-- зона для кликов -->
+        <div class="clickerZone">
+            <h1 id="total-points">0</h1>
+            <h2>в сек:</h2>
+            <div id="points-per-second">0</div>
+            <button id="playButton">
+                <img class="clickerZone-img" src="img/photo_2024-05-30_22-11-40.jpg" alt="Кликабельное изображение" id="clickable-image" />
+            </button>
+            <audio id="audioPlayer" src="аудио/knopka-schelchok-korotkii-zvonkii-blizkii-suhoi1_[cut_0sec].mp3"></audio>
+        </div>
+
+        <!-- магазин апгрейдов -->
+        <div class="store">
+            <h1 class="h1-upgrade-shop">upgrade shop💰</h1>
+            <div class="cobitie__container__for__card" id="upgrades">
+                <!-- Карточки апгрейдов будут добавлены динамически -->
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+<!-- план по проджекту
+1. добавить измение в количестве очков 100000 = 100к
+2. улучшить стилистику карточек поставить все элеиенты на место
+3. добавить больше картек 
+
+ 5. сделать сохрание улучшений при перезагрузке страницы -->
